@@ -44,8 +44,9 @@ schema.queryType({
   }
 })
 
-/*schema.mutationType({
+schema.mutationType({
   definition(t) {
-    t.crud.createOneUser()
+    t.crud.createOnePost()
+    t.crud.createOneTag()
   }
-})*/
+})
