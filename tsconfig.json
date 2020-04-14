@@ -4,6 +4,7 @@
     "module": "commonjs",
     "lib": ["esnext"],
     "strict": true,
+    "esModuleInterop": true
     // [1] nexus managed
     // "rootDir": "api",
     // "outDir": "/Users/crabasa/Code/melted-monkey/node_modules/.build",

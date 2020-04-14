@@ -2,6 +2,8 @@
   "name": "melted-monkey",
   "license": "UNLICENSED",
   "dependencies": {
+    "@types/cors": "^2.8.6",
+    "cors": "^2.8.5",
     "nexus": "0.20.0-next.43",
     "nexus-plugin-prisma": "^0.7.0"
   },
