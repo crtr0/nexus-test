@@ -1,40 +1,45 @@
 import { schema } from "nexus"
       
 schema.objectType({
-  name: "World",
+  name: "User",
   definition(t) {
     t.model.id()
     t.model.name()
-    t.model.population()
+    t.model.email()
+    t.model.isAdmin()
   }
 })
-      
+
+schema.objectType({
+  name: "Post",
+  definition(t) {
+    t.model.id()
+    t.model.title()
+    t.model.slug()
+    t.model.author()
+    t.model.body()
+    t.model.image()
+    t.model.tags()
+    t.model.postedAt()
+  }
+})
+
+schema.objectType({
+  name: "Tag",
+  definition(t) {
+    t.model.id()
+    t.model.name()
+    t.model.posts()
+  }
+})
+
 schema.queryType({
   definition(t) {
-    t.field("hello", {
-      type: "World",
-      args: {
-        world: schema.stringArg({ required: false })
-      },
-      async resolve(_root, args, ctx) {
-        const worldToFindByName = args.world ?? 'Earth'
-        const world = await ctx.db.world.findOne({
-          where: {
-            name: worldToFindByName
-          }
-        })
-      
-        if (!world) throw new Error(`No such world named "${args.world}"`)
-      
-        return world
-      }
-    })
-  
-    t.list.field('worlds', {
-      type: 'World',
-      resolve(_root, _args, ctx) { 
-        return ctx.db.world.findMany()
-      }
-    })
+    t.crud.user()
+    t.crud.users()
+    t.crud.post()
+    t.crud.posts()
+    t.crud.tag()
+    t.crud.tags()
   }
 })
