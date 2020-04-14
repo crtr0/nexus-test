@@ -47,10 +47,5 @@ schema.queryType({
 /*schema.mutationType({
   definition(t) {
     t.crud.createOneUser()
-    t.crud.users()
-    t.crud.post()
-    t.crud.posts()
-    t.crud.tag()
-    t.crud.tags()
   }
 })*/
