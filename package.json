@@ -3,7 +3,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "cors": "^2.8.5",
-    "nexus": "0.20.0-next.43",
+    "nexus": "0.20.0",
     "nexus-plugin-prisma": "^0.7.0"
   },
   "scripts": {
@@ -19,6 +19,6 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.6",
-    "prettier": "^2.0.4"
+    "prettier": "^2.0.5"
   }
 }
